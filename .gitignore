@@ -1,0 +1,65 @@
+# ===== Secrets & local environment =====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.ppk
+*.kdbx
+id_rsa*
+id_ed25519*
+id_ecdsa*
+!*.pub
+.netrc
+.htpasswd
+credentials*.json
+*service-account*.json
+*.har
+
+# ===== Local-only =====
+*.local
+*.local.*
+docker-compose.override.yml
+.private/
+
+# ===== AI assistant local state =====
+# (contains machine paths and saved commands)
+CLAUDE.local.md
+.claude/settings.local.json
+.aider*
+.specstory/
+
+# ===== OS / editor =====
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# ===== Logs, caches, scratch =====
+*.log
+logs/
+tmp/
+.cache/
+
+# ===== SQLite databases (live DB lives on the Docker volume) =====
+*.db
+*.sqlite
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.pytest_cache/
+.mypy_cache/

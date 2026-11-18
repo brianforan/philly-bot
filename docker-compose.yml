@@ -1,0 +1,19 @@
+services:
+  philly-bot:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # Keep the SQLite DB on the persistent volume so channel mappings, events,
+      # and digest message IDs survive rebuilds (no re-/setup needed per deploy).
+      - DB_PATH=/data/philly_bot.db
+    volumes:
+      - bot-data:/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  bot-data:
